@@ -8,7 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Nos permite copiar archivos de una ruta a otra
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');   // nos coge los archivos estaticos para poder utlilizarlos
 
 module.exports = (env, argv) => {
     const isProduction = argv.mode === 'production';
@@ -39,7 +39,23 @@ module.exports = (env, argv) => {
                             presets: ['@babel/preset-env']
                         }
                     }
+                },
+                {
+                    test: /\.(png|jpg|jpeg|gif|svg)$/, //agragamos los formatos de img qeu va a soportar
+                    use: [
+                        {
+                            loader: 'url-loader',
+                            options: {
+                                limit: 8192,
+                                name: 'asset/img/[name].[ext]'
+                            }
+                        }
+                    ]
+                        
+
+                    
                 }
+
             ]
         },
         plugins: [
@@ -48,7 +64,16 @@ module.exports = (env, argv) => {
                 chunks: ['index', 'styles']
             }),
             // averiguar que significa un spread operator
-            ...(isProduction ? [new MiniCssExtractPlugin({ filename: 'assets/css/[name].[contenthash].css' })] : [])
+            ...(isProduction ? [new MiniCssExtractPlugin({ filename: 'assets/css/[name].[contenthash].css' })] : []),
+            new CopyWebpackPlugin({
+                patterns: [
+                    {
+                        from: './src/assets/img',
+                        to: 'assets/img'
+                    }
+                ]
+            })
+            
         ],
         devServer: {
             static: {
