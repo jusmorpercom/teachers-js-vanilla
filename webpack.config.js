@@ -8,7 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Nos permite copiar archivos de una ruta a otra
-const CopyWebpackPlugin = require('copy-webpack-plugin');   // nos coge los archivos estaticos para poder utlilizarlos
+const CopyWebpackPlugin = require('copy-webpack-plugin');   // nos coge los archivos estáticos para poder utilizarlos
 
 module.exports = (env, argv) => {
     const isProduction = argv.mode === 'production';

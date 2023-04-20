@@ -14,15 +14,17 @@ export const formElements = {
 };
 
 export function getFormData() {
-
-    const teacher = { //creamos el objeto profesor con los siguientes atributos
+    /**
+     * const formData = new FormData(formElements.form); 
+     * return Object.fromEntries(formData.entries()); 
+     * Otra forma de obtener los datos, no es muy recomendada
+     */
+// esto es un objeto tipo jason
+    const teacher = { //creamos el objeto profesor con los siguientes atributos, para reutilizar el código
          description:  formElements.fields.name.Value,
          email:  formElements.fields.name.Value,
          birthDate:  formElements.fields.name.Value, 
          name:  formElements.fields.name.value,
     };
-    return teacher;
-    
+    return teacher;    
 }
-
-// POR QUE NO ME SALE LOS CUADROS CUANDO ME PARO EN EL CODIGO???
