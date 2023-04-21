@@ -16,13 +16,13 @@
     <main class="container">
 
         <section class="row text-center"> <!--Una fila tiene 12 columnas-->
-            <article class="col-xs-12 col-md-6"> <!--el col-sm indica que para dispositivo pequeños-->
+            <article class="col-xs-12 col-md-6 mb-3"> <!--el col-sm indica que para dispositivo pequeños-->
                 <img class="img-fluid rounded" src="./assets/img/teacher.jpg" alt="teacher">
                 <!-- si se desea trabajar diferentes imágenes para cada dispositivo, hay una etiqueta picture en donde especificamos el dispositivo y las imágenes dependiendo-->
             </article>
             <article class="col-xs-12 col-md-6">
 
-                <form novalidate class="form-floating" id="teacher-form"><!--por defecto un form tiene un método para enviar datos, lo cual no hacemos -->
+                <form novalidate class="form-floating" id="teacherForm"><!--por defecto un form tiene un método para enviar datos, lo cual no hacemos -->
                     <!--como no vamos a trabajar con una APi no necesitamos de la propiedad action, que es para mandar los datos del formulario al servidor, es mas nunca la usamos-->
 
                     <div class="form-floating mb-3"><!--mb= margin bottom-->
@@ -49,11 +49,11 @@
                     </div>
 
                     <div class="row">
-                        <div class="d-grid col md-6">
+                        <div class="d-grid col md-6 mb-3 ">
                             <button id="reset" class="btn btn-secondary">Cancelar</button> 
                         </div>
-                        <div class="d-grid col md-6">
-                            <button id="submit" class="btn btn-success">Enviar</button> 
+                        <div class="d-grid col md-6 mb-3 ">
+                            <button id="submit" class="btn btn-success">Enviar</button> <!-- REVISARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR-->
                         </div>
                     </div>
 
@@ -101,35 +101,6 @@
                         </thead>
 
                         <tbody>
-
-                            <tr>
-                                <td>
-                                    102030
-                                </td>
-                                <td>
-                                    Juan Diego
-                                </td>
-                                <td>
-                                    Da clases de Frontend en la UPB
-                                </td>
-                                <td>
-                                    Ypopa@upb.com
-                                </td>
-                                <td>
-                                    02/12/1996
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" title="Editar">
-                                        <!--button[type=button].button.btn-primary*2 emmet-->
-                                        <em class="fa fa-pencil"></em>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" title="Eliminar">
-                                        <em class="fa fa-trash"></em>
-                                    </button>
-
-                                </td>
-                            </tr>
-
                         </tbody>
                     </table>
                 </div>

@@ -19,12 +19,19 @@ export function getFormData() {
      * return Object.fromEntries(formData.entries()); 
      * Otra forma de obtener los datos, no es muy recomendada
      */
-// esto es un objeto tipo jason
+    // esto es un objeto tipo json
+
     const teacher = { //creamos el objeto profesor con los siguientes atributos, para reutilizar el código
-         description:  formElements.fields.name.Value,
-         email:  formElements.fields.name.Value,
-         birthDate:  formElements.fields.name.Value, 
-         name:  formElements.fields.name.value,
+        id: new Date().getTime(), //estamos sacando la fecha actual, pero por debajo es un numero que cuenta en milisegundos
+        name: formElements.fields.name.value,
+        description: formElements.fields.name.Value,
+        email: formElements.fields.name.Value,
+        birthDate: formElements.fields.name.Value,
+
     };
-    return teacher;    
+    return teacher;
+} 
+// cuando guardemos la info se limpie las celdas
+export function resetForm() {
+    formElements.form.reset();
 }

@@ -2,4 +2,9 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-//solo para estilos genericos
+
+import 'alertifyjs/build/css/alertify.min.css/';
+import 'alertifyjs/build/css/themes/bootstrap.min.css';
+
+
+//solo para estilos genéricos
