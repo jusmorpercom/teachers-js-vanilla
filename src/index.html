@@ -9,51 +9,48 @@
 </head>
 
 <body>
-    <header class="mt-3">
-        <h1 class="text-center"> Profesores </h1> <!-- buscar en la librería de bootstrap los tipos de class-->
+    <header class="my-3">
+        <h1 class="text-center"> Profesores </h1>
     </header>
 
     <main class="container">
 
-        <section class="row text-center"> <!--Una fila tiene 12 columnas-->
-            <article class="col-xs-12 col-md-6 mb-3"> <!--el col-sm indica que para dispositivo pequeños-->
-                <img class="img-fluid rounded" src="./assets/img/teacher.jpg" alt="teacher">
-                <!-- si se desea trabajar diferentes imágenes para cada dispositivo, hay una etiqueta picture en donde especificamos el dispositivo y las imágenes dependiendo-->
+        <section class="row text-center">
+            <article class="col-xs-12 col-md-6 mb-3">
+
+                <img class="img-fluid rounded" src="./assets/img/teacher.jpg" alt="Profesores">
+
             </article>
             <article class="col-xs-12 col-md-6">
 
-                <form novalidate class="form-floating" id="teacherForm"><!--por defecto un form tiene un método para enviar datos, lo cual no hacemos -->
-                    <!--como no vamos a trabajar con una APi no necesitamos de la propiedad action, que es para mandar los datos del formulario al servidor, es mas nunca la usamos-->
+                <form novalidate class="form-floating" id="teacherForm">
 
-                    <div class="form-floating mb-3"><!--mb= margin bottom-->
-                        <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Ejm: Juan">
-                        <!--el id es para reconocerlo por javascript y le name es lo uqe recibe el servidor, deberían llamarse igual-->
-                        <label for="txtName">Nombre</label> <!--el for es con el que esta relacionado-->
+                    <div class="form-floating mb-3">
+                        <input type="text" id="txtName" name="txtName" class="form-control" placeholder="Ejm: Yhoan">
+                        <label for="txtName">Nombre</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <textarea name="txtDescription" id="txtDescription" cols="30" rows="10"
-                            class="form-control"></textarea>
+                        <textarea name="txtDescription" id="txtDescription" cols="30" rows="10" class="form-control"></textarea>
                         <label for="txtDescription">Descripción</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="email" name="txtEmail" id="txtEmail" class="form-control"
-                            placeholder="Ejm: ejemplo@correo.com">
+                        <input type="email" id="txtEmail" name="txtEmail" class="form-control" placeholder="Ejm: yhoan@gmail.com">
                         <label for="txtEmail">Correo electrónico</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="date" name="txtBirthdayDate" id="txtBirthdayDate" class="form-control" placeholder="Ejm: 05/07/1993> 
-                        <label for=" txtBirthDate">Fecha de Nacimiento</label>
+                        <input type="date" id="txtBirthDate" name="txtBirthDate" class="form-control" placeholder="Ejm: 05/07/1993">
+                        <label for="txtBirthDate">Fecha de nacimiento</label>
                     </div>
 
                     <div class="row">
-                        <div class="d-grid col md-6 mb-3 ">
-                            <button id="reset" class="btn btn-secondary">Cancelar</button> 
+                        <div class="d-grid col-md-6 mb-3">
+                            <button type="reset" id="btnCancel" class="btn btn-secondary">Cancelar</button>
                         </div>
-                        <div class="d-grid col md-6 mb-3 ">
-                            <button id="submit" class="btn btn-success">Enviar</button> <!-- REVISARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR-->
+                        <div class="d-grid col-md-6 mb-3">
+                            <button type="submit" id="btnSubmit" class="btn btn-success">Enviar</button>
                         </div>
                     </div>
 
@@ -68,7 +65,7 @@
 
                 <div class="table-responsive">
 
-                    <table id="tblTeachers" class="table --table">
+                    <table id="tblTeachers" class="table table-hover table-bordered">
 
                         <caption>
                             Registros de los profesores
@@ -76,9 +73,8 @@
 
                         <thead>
 
-                            <tr class="table-dark aling-middle"> <!--table row -->
+                            <tr class="table-dark text-center">
                                 <th scope="col">
-                                    <!--ctrl + d selecciona todos los th y te crea un cursor para cada uno. EL scope es para los encabezados-->
                                     Id de profesor
                                 </th>
                                 <th scope="col">
@@ -102,8 +98,11 @@
 
                         <tbody>
                         </tbody>
+
                     </table>
+
                 </div>
+
             </div>
 
         </section>
@@ -111,7 +110,7 @@
     </main>
 
     <footer>
-        Derechos reservados por Juan Diego <em class="fa-regular fa-copyright"></em>
+        Derechos reservados por Juan Diego Mejía V. <em class="fa-regular fa-copyright"></em>
     </footer>
 
 </body>

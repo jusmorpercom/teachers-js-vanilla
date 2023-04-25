@@ -8,7 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Nos permite copiar archivos de una ruta a otra
-const CopyWebpackPlugin = require('copy-webpack-plugin');   // nos coge los archivos estáticos para poder utilizarlos
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => {
     const isProduction = argv.mode === 'production';
@@ -41,21 +41,17 @@ module.exports = (env, argv) => {
                     }
                 },
                 {
-                    test: /\.(png|jpg|jpeg|gif|svg)$/, //agragamos los formatos de img qeu va a soportar
+                    test: /\.(png|jpg|jpeg|gif|svg)$/, //agregamos los formatos de img qeu va a soportar
                     use: [
                         {
                             loader: 'url-loader',
                             options: {
                                 limit: 8192,
-                                name: 'asset/img/[name].[ext]'
+                                name: 'assets/img/[name].[ext]'
                             }
                         }
                     ]
-                        
-
-                    
                 }
-
             ]
         },
         plugins: [
@@ -73,7 +69,6 @@ module.exports = (env, argv) => {
                     }
                 ]
             })
-            
         ],
         devServer: {
             static: {
